@@ -1,10 +1,10 @@
-%global src_repo_tag   R0_5_0
+%global src_repo_tag   R0_6_1
 %global eclipse_base   %{_libdir}/eclipse
 %global install_loc    %{_libdir}/eclipse/dropins/callgraph
 %global debug_package %{nil}
 
 Name:           eclipse-callgraph
-Version:        0.5.0
+Version:        0.6.1
 Release:        1%{?dist}
 Summary:        C/C++ Call Graph Visualization Tool
 
@@ -21,14 +21,14 @@ ExclusiveArch: i686 x86_64
 ExcludeArch:    ppc64
 %endif
 
-BuildRequires: eclipse-cdt
-BuildRequires: eclipse-gef
-BuildRequires: eclipse-pde
-BuildRequires: eclipse-linuxprofilingframework >= 0.3.0-5
-Requires: systemtap
-Requires: eclipse-gef
-Requires: eclipse-cdt
-Requires: eclipse-linuxprofilingframework >= 0.3.0-5
+BuildRequires: eclipse-cdt >= 6.0
+BuildRequires: eclipse-gef >= 3.5.2
+BuildRequires: eclipse-pde >= 3.5.2
+BuildRequires: eclipse-linuxprofilingframework >= 0.5.0
+Requires: systemtap >= 1.2
+Requires: eclipse-gef >= 3.5.2
+Requires: eclipse-cdt >= 6.0
+Requires: eclipse-linuxprofilingframework >= 0.5.0
 
 %description
 Graphically displays the call hierarchy from executing a C/C++ binary, along
@@ -59,6 +59,16 @@ install -d -m 755 %{buildroot}%{install_loc}
 %doc org.eclipse.linuxtools.callgraph-feature/epl-v10.html
 
 %changelog
+* Fri Oct 8 2010 Severin Gehwolf <sgehwolf@redhat.com> 0.6.1-1
+- Update to upstream 0.6.1 release.
+- Add reasonable required dependency versions.
+
+* Fri Jul 16 2010 Charley Wang <chwang@redhat.com> 0.6.0-2
+- Update tag to correct version
+
+* Fri Jul 16 2010 Charley Wang <chwang@redhat.com> 0.6.0-1
+- Update to version 0.6 of Linux Tools Proect.
+
 * Fri Mar 19 2010 Jeff Johnston <jjohnstn@redhat.com> 0.5.0-1
 - Resolves: #575108
 - Rebase to Linux tools 0.5 release.
