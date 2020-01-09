@@ -1,0 +1,4 @@
+2009-11-03  Charley Wang  <chwang@redhat.com>
+
+	* feature.properties: Change description for Callgraph feature. Add Changelog
+	* feature.properties: Change featureName
